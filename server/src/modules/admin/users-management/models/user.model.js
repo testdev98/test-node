@@ -104,7 +104,7 @@ const UsersSchema = new mongoose.Schema(
   }
 );
 
-// Pre save method is use for data change befor save
+// Pre save method is use for data change before save
 UsersSchema.pre("save", async function (next) {
   try {
     if (!this.username) {

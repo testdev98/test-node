@@ -18,7 +18,7 @@ const Services = {
   async getAllServices() {
     try {
       // Fetch all service from the database
-      return await ServiceModel.find().select("-__v -tokens -mastersheet");
+      return await ServiceModel.find().select("-__v -tokens");
     } catch (error) {
       console.error("Error fetching all service: ", error);
       throw new Error("Error fetching all service: " + error.message);

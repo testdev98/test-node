@@ -13,7 +13,7 @@ import idmeritLogo from '@/assets/company/idmerit-logo.svg';
 
 const DashboardLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const { user } = useUser();
+  const { user, setUser } = useUser();
   const { theme, toggleTheme, primaryColor, setPrimaryColor } = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
@@ -52,6 +52,7 @@ const DashboardLayout = () => {
   const handleLogout = async () => {
     await logout();
     localStorage.removeItem('token');
+    setUser(null);
     navigate('/');
   };
 
