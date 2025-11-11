@@ -1,50 +1,44 @@
 const sendResponse = require("../../../utils/response");
 const { StatusCodes } = require("http-status-codes");
 const { getRequestToken } = require("../../../utils/tokens");
-const AMLService = require("../services/aml.service");
+const KYBService = require("../services/kyb.service");
 
-class AMLController {
+class KYBController {
   async requestInfo(req, res) {
     try {
       const userDetails = req.user;
       const {
         envType,
-        request_type,
-        first_name,
-        last_name,
-        middle_name,
-        dob,
-        gender,
-        address,
-        state,
-        city,
-        zip,
-        country_code,
         company_name,
+        company_number,
+        source,
+        state,
+        country_code,
         request_id,
-        response_type,
-        monitoring,
+        request_type, // New field to determine the type of request (search, details, officer)
+        officer_name,
+        officer_number,
       } = req.body;
 
       // Get request token/config
-      const requestDetails = await getRequestToken("aml", envType);
+      const requestDetails = await getRequestToken("kyb", envType);
       if (!requestDetails) {
         return sendResponse(res, {
           statusCode: StatusCodes.BAD_REQUEST,
-          message: "AML service is not configured properly.",
+          message: "KYB service is not configured properly.",
           data: null,
         });
       }
 
-      // Check if user has subscribed to AML
+      // Check if user has subscribed to KYB
       if (
         userDetails.role_id.slug !== "super-admin" &&
         (!userDetails.subscribe_services ||
-          !userDetails.subscribe_services.includes("aml"))
+          !userDetails.subscribe_services.includes("kyb"))
       ) {
         return sendResponse(res, {
           statusCode: StatusCodes.FORBIDDEN,
-          message: "AML service is not subscribed.",
+          message: "KYB service is not subscribed.",
           data: null,
         });
       }
@@ -52,39 +46,36 @@ class AMLController {
       // Initialize requestData object
       let requestData = {};
 
-      // Dynamically build requestData based on request_type ('p' for person, 'c' for organization)
       switch (request_type) {
-        case "p": // Person info request
+        case "search":
           requestData = {
-            first_name,
-            last_name,
-            middle_name,
-            dob,
-            gender,
-            address,
-            state,
-            city,
-            zip,
+            company_name,
+            company_number,
             country_code,
+            source,
             request_id,
-            response_type: response_type || "json",
-            name_type: "p",
-            monitoring: monitoring || "false",
           };
           break;
 
-        case "c": // Organization info request
+        case "details":
           requestData = {
             company_name,
-            address,
+            company_number,
             state,
-            city,
-            zip,
             country_code,
+            source,
             request_id,
-            response_type: response_type || "json",
-            name_type: "c",
-            monitoring: monitoring || "false",
+          };
+          break;
+
+        case "officer":
+          requestData = {
+            officer_name,
+            officer_number,
+            state,
+            country_code,
+            source,
+            request_id,
           };
           break;
 
@@ -95,30 +86,29 @@ class AMLController {
             data: null,
           });
       }
-
-      // Call the AML service
-      const amlResponse = await AMLService.requestInfo(
+      // Call the KYB service with the dynamically created requestData
+      const kybResponse = await KYBService.requestInfo(
         envType,
         requestData,
         requestDetails,
         userDetails,
-        request_type === "p" ? "person_info" : "organization_info"
+        request_type
       );
 
       // Return success response
       return sendResponse(res, {
         statusCode: StatusCodes.OK,
-        message: "AML request processed successfully.",
-        data: amlResponse,
+        message: "KYB request processed successfully.",
+        data: kybResponse,
       });
     } catch (error) {
-      console.error("AML request failed:", error);
+      console.error("KYB request failed:", error);
       return sendResponse(res, {
         statusCode: StatusCodes.INTERNAL_SERVER_ERROR,
-        message: "An error occurred while processing the AML request.",
+        message: "An error occurred while processing the KYB request.",
       });
     }
   }
 }
 
-module.exports = new AMLController();
+module.exports = new KYBController();

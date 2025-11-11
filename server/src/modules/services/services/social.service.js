@@ -1,6 +1,8 @@
 const axios = require("axios");
 const RequestLogsModel = require("../models/kyx_requests.models");
 const { getResponseStatus } = require("../../../utils/status.helpers");
+const path = require("path");
+const fs = require("fs");
 
 const SocialService = {
   async request(
@@ -26,17 +28,28 @@ const SocialService = {
     const log = await RequestLogsModel.create(logEntry);
 
     try {
-      const socialResponse = await axios.post(
-        `${requestDetails.url}`,
-        requestData,
-        {
-          headers: {
-            Authorization: `Bearer ${requestDetails.token}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      
+      let socialResponse;
+      if (envType == "sandbox") {
+        const filePath = path.join(
+          __dirname,
+          "../",
+          "response",
+          "social",
+          "resp1.json"
+        );
+        socialResponse = JSON.parse(fs.readFileSync(filePath, "utf8"));
+      } else {
+        socialResponse = await axios.post(
+          `${requestDetails.url}`,
+          requestData,
+          {
+            headers: {
+              Authorization: `Bearer ${requestDetails.token}`,
+              "Content-Type": "application/json",
+            },
+          }
+        );
+      }
       const { main_status, sub_status } = getResponseStatus(
         socialResponse.status,
         socialResponse.data

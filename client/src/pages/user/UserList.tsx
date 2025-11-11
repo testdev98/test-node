@@ -280,7 +280,7 @@ const UserList = () => {
                   View User
                 </DropdownMenuItem>
               </Link>
-              {canEdit && (
+              {canEdit && row.original.username != "superAdmin" && (
                 <CanAccess permission={PERMISSIONS.USER.UPDATE}>
                   <Link to={`/users/edit/${row.original._id}`}>
                     <DropdownMenuItem className="hover:bg-primary/10 transition-colors">

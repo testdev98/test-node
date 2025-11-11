@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useTheme } from '@/contexts/ThemeContext';
-import { Menu, LogOut, Moon, Sun, Palette, LayoutDashboard, ShieldCheck, Sparkles, Users } from 'lucide-react';
+import { Menu, LogOut, Moon, Sun, Palette, LayoutDashboard, UserCog, Sparkles, Users, IdCard } from 'lucide-react';
 import { logout } from '@/api/auth';
 import { useUser } from '@/contexts/UserContext';
 import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
@@ -35,14 +35,14 @@ const DashboardLayout = () => {
     },
     {
       title: 'Services',
-      icon: ShieldCheck,
+      icon: IdCard,
       href: '/services',
       isActive: location.pathname.startsWith('/services'),
       gradient: 'from-' + primaryColor + '-600 to-cyan-500',
     },
     {
       title: 'Roles',
-      icon: ShieldCheck,
+      icon: UserCog,
       href: '/roles',
       isActive: location.pathname.startsWith('/roles'),
       gradient: 'from-' + primaryColor + '-600 to-cyan-500',

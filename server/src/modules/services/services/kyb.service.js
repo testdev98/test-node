@@ -4,18 +4,25 @@ const { getResponseStatus } = require("../../../utils/status.helpers");
 const path = require("path");
 const fs = require("fs");
 
-const AMLService = {
+const KYBService = {
   async requestInfo(
     envType,
     requestData,
     requestDetails,
     userDetails,
-    requestType,
+    requestType
   ) {
+    const endpoints = {
+      search: "search",
+      officer: "officer/search",
+      default: "details",
+    };
+    const endpoint = endpoints[requestType] || endpoints.default;
+
     const logEntry = {
       request_id: requestData.request_id,
       user_id: userDetails._id,
-      service: "aml",
+      service: "kyb",
       env_type: envType,
       request_at: new Date(),
       response_at: null,
@@ -28,21 +35,21 @@ const AMLService = {
     const log = await RequestLogsModel.create(logEntry);
 
     try {
-      let amlResponse;
+      let kybResponse;
+
       if (envType == "sandbox") {
-        let searchType = requestType == "person_info" ? "person" : "company";
         const filePath = path.join(
           __dirname,
           "../",
           "response",
-          "aml",
-          searchType,
+          "kyb",
+          requestType,
           "resp1.json"
         );
-        amlResponse = JSON.parse(fs.readFileSync(filePath, "utf8"));
+        kybResponse = JSON.parse(fs.readFileSync(filePath, "utf8"));
       } else {
-        amlResponse = await axios.post(
-          `${requestDetails.url}info`,
+        kybResponse = await axios.post(
+          `${requestDetails.url + endpoint}`,
           requestData,
           {
             headers: {
@@ -54,24 +61,24 @@ const AMLService = {
       }
 
       const { main_status, sub_status } = getResponseStatus(
-        amlResponse.status,
-        amlResponse.data
+        kybResponse.status,
+        kybResponse.data
       );
 
       await RequestLogsModel.updateOne(
         { _id: log._id },
         {
           $set: {
-            trans_id: amlResponse.data?.transaction_id || "",
+            trans_id: kybResponse.data?.transaction_id || "",
             main_status,
             sub_status,
             response_at: new Date(),
-            response: amlResponse.data,
+            response: kybResponse.data,
           },
         }
       );
 
-      return amlResponse.data;
+      return kybResponse.data;
     } catch (error) {
       const errorData = error.response?.data || { message: error.message };
 
@@ -87,10 +94,10 @@ const AMLService = {
         }
       );
 
-      console.error("Error in AMLService.requestInfo:", errorData);
+      console.error("Error in KYBService.requestInfo:", errorData);
       throw error;
     }
   },
 };
 
-module.exports = AMLService;
+module.exports = KYBService;

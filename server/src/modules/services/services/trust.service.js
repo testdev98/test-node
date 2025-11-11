@@ -1,6 +1,8 @@
 const axios = require("axios");
 const RequestLogsModel = require("../models/kyx_requests.models");
 const { getResponseStatus } = require("../../../utils/status.helpers");
+const path = require("path");
+const fs = require("fs");
 
 const TrustService = {
   async request(
@@ -26,16 +28,29 @@ const TrustService = {
     const log = await RequestLogsModel.create(logEntry);
 
     try {
-      const trustResponse = await axios.post(
-        `${requestDetails.url}`,
-        requestData,
-        {
-          headers: {
-            Authorization: `Bearer ${requestDetails.token}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      let trustResponse;
+      if (envType == "sandbox") {
+        const filePath = path.join(
+          __dirname,
+          "../",
+          "response",
+          "trust",
+          "resp1.json"
+        );
+        trustResponse = JSON.parse(fs.readFileSync(filePath, "utf8"));
+      } else {
+         trustResponse = await axios.post(
+          `${requestDetails.url}`,
+          requestData,
+          {
+            headers: {
+              Authorization: `Bearer ${requestDetails.token}`,
+              "Content-Type": "application/json",
+            },
+          }
+        );
+      }
+      console.log(trustResponse.status);
       const { main_status, sub_status } = getResponseStatus(
         trustResponse.status,
         trustResponse.data

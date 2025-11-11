@@ -114,9 +114,9 @@ const RoleView = () => {
   // Display loading state while role data is being fetched
   if (!role) {
     return (
-        <div className="text-center py-20 text-lg font-medium text-muted-foreground">
-            Loading role details...
-        </div>
+      <div className="text-center py-20 text-lg font-medium text-muted-foreground">
+        Loading role details...
+      </div>
     );
   }
 
@@ -145,10 +145,10 @@ const RoleView = () => {
           <CardTitle className="text-2xl font-bold text-primary">
             {role.name}
             <Badge
-                variant={statusVariant(role.status)}
-                className="ml-3 px-3 py-1 text-sm font-semibold capitalize"
+              variant={statusVariant(role.status)}
+              className="ml-3 px-3 py-1 text-sm font-semibold capitalize"
             >
-                {role.status}
+              {role.status}
             </Badge>
           </CardTitle>
           <DropdownMenu>
@@ -189,14 +189,14 @@ const RoleView = () => {
           <div>
             <p className="text-sm font-medium text-muted-foreground mb-1">Created At</p>
             <p className="text-lg font-semibold text-foreground">
-                {new Date(role.createdAt).toLocaleDateString()}
+              {new Date(role.createdAt).toLocaleDateString()}
             </p>
           </div>
 
           <div>
             <p className="text-sm font-medium text-muted-foreground mb-1">Last Updated</p>
             <p className="text-lg font-semibold text-foreground">
-                {new Date(role.updatedAt).toLocaleDateString()}
+              {new Date(role.updatedAt).toLocaleDateString()}
             </p>
           </div>
 
@@ -245,10 +245,23 @@ const RoleView = () => {
               ))}
             </div>
           ) : (
-            <p className="text-muted-foreground italic text-center py-4">No permissions assigned to this role.</p>
+            <p className="text-muted-foreground italic text-center py-4">{role.slug == 'super-admin' ? "Super Admin has all permisions." : "No permissions assigned to this role."}</p>
           )}
         </CardContent>
       </Card>
+
+      <div className="flex justify-end space-x-3 pt-6">
+        <Button variant="outline" onClick={() => navigate(-1)}>
+          Go Back
+        </Button>
+        {role.slug != "super-admin" && (
+          <CanAccess permission={PERMISSIONS.ROLE.UPDATE}>
+            <Button onClick={() => navigate(`/roles/edit/${id}`)}>
+              Edit Role
+            </Button>
+          </CanAccess>
+        )}
+      </div>
     </div>
   );
 };

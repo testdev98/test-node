@@ -132,7 +132,7 @@ const RoleManagement = () => {
                 // This prevents super-admins from editing other super-admin roles if 'editable' is false,
                 // but allows them to edit non-super-admin roles even if 'editable' is false for those.
                 const canEdit = isEditable && (!isSuperAdminRole || (isSuperAdminUser && isSuperAdminRole));
-                
+
                 // Refined canEdit logic to be more explicit and correct based on common permission patterns:
                 // A role can be edited if:
                 // 1. The role is explicitly marked as editable (row.original.editable is true)
@@ -158,7 +158,7 @@ const RoleManagement = () => {
                                     View Role
                                 </DropdownMenuItem>
                             </Link>
-                            {finalCanEdit && ( // Use finalCanEdit
+                            {finalCanEdit && !isSuperAdminRole && ( // Use finalCanEdit
                                 <CanAccess permission={PERMISSIONS.ROLE.UPDATE}>
                                     <Link to={`/roles/edit/${row.original._id}`}>
                                         <DropdownMenuItem className="hover:bg-primary/10 transition-colors">

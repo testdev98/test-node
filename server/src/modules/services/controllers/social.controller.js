@@ -20,7 +20,7 @@ class SocialController {
 
       // Check if user has subscribed to Social
       if (
-        userDetails.role !== "super-admin" &&
+        userDetails.role_id.slug !== "super-admin" &&
         (!userDetails.subscribe_services ||
           !userDetails.subscribe_services.includes("social"))
       ) {

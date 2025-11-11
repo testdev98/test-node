@@ -1,0 +1,46 @@
+{
+  "status": true,
+  "status_code": 200,
+  "data": [
+    {
+      "company_name": "FTX, LIMITED LIABILITY COMPANY",
+      "reg_number": "W23576325",
+      "incorporation_date": "2023-01-03",
+      "dissolution_date": null,
+      "type": "DOMESTIC LLC",
+      "current_status": "Active",
+      "branch": null,
+      "parent_company_info": null,
+      "primary_company_info": null,
+      "ubo_info": null,
+      "ucc_info": null,
+      "complete_address": "210 RESEARCH BLVD., STE. 130, ABERDEEN, MD, 21001",
+      "address_details": {
+        "address": "210 RESEARCH BLVD., STE. 130",
+        "city": "ABERDEEN",
+        "state": "MD",
+        "zip": "21001"
+      },
+      "officers": [
+        {
+          "id": 746143194,
+          "name": "TECHXIMIUS CORPORATION",
+          "position": "agent",
+          "start_date": null,
+          "end_date": null,
+          "status": null,
+          "address": "TECHXIMIUS CORPORATION, 210 RESEARCH BLVD, SUITE 130, ABERDEEN, MD, 21001"
+        }
+      ],
+      "filings": {
+        "last_filing_date": "2023-01-03",
+        "filing_type": {
+          "filing_type_code": null,
+          "filing_type_description": "ARTICLES OF ORGANIZATION"
+        }
+      }
+    }
+  ],
+  "transaction_id": "176286513769132ff1ef014EnJwB",
+  "request_id": "Test0001Dev"
+}

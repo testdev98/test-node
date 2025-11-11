@@ -20,7 +20,7 @@ class TrustController {
 
       // Check if user has subscribed to Trust
       if (
-        userDetails.role !== "super-admin" &&
+        userDetails.role_id.slug !== "super-admin" &&
         (!userDetails.subscribe_services ||
           !userDetails.subscribe_services.includes("trust"))
       ) {

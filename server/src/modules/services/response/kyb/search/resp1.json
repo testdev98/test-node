@@ -1,0 +1,908 @@
+{
+    "status": true,
+    "status_code": 200,
+    "data": [
+        {
+            "country": "US",
+            "state": "MD",
+            "company_name": "FTX, LIMITED LIABILITY COMPANY",
+            "reg_number": "W23576325",
+            "current_status": "Active",
+            "branch": null,
+            "address": "210 RESEARCH BLVD., STE. 130, ABERDEEN, MD, 21001"
+        },
+        {
+            "country": "US",
+            "state": "IL",
+            "company_name": "FTX LLC",
+            "reg_number": "LLC_14715754",
+            "current_status": "Active",
+            "branch": null,
+            "address": "1244 W NORTHWEST HIGHWAY, PALATINE, IL, 60067"
+        },
+        {
+            "country": "US",
+            "state": "IN",
+            "company_name": "FTX LLC",
+            "reg_number": "2012020700812",
+            "current_status": "Active",
+            "branch": null,
+            "address": "PO BOX 51, FILLMORE, IN 46128"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX, INC.",
+            "reg_number": "5348904",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "MO",
+            "company_name": "FTX LLC",
+            "reg_number": "LC001437525",
+            "current_status": "Active",
+            "branch": null,
+            "address": "1416 E 420th Rd, Bolivar, MO, 65613"
+        },
+        {
+            "country": "US",
+            "state": "VT",
+            "company_name": "FTX, INC.",
+            "reg_number": "0337821",
+            "current_status": "Active",
+            "branch": null,
+            "address": "1887 River ST, Bethel, VT, 05032"
+        },
+        {
+            "country": "US",
+            "state": "OH",
+            "company_name": "F.T.X., L.L.C.",
+            "reg_number": "1564424",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "SC",
+            "company_name": "F.T.X., LLC",
+            "reg_number": "408057",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "NJ",
+            "company_name": "FTX, INC.",
+            "reg_number": "0100310203",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "CO",
+            "company_name": "FTX Drones LLC",
+            "reg_number": "20238092881",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "ID",
+            "company_name": "FTX Services, LLC",
+            "reg_number": "0005790460",
+            "current_status": "Active",
+            "branch": null,
+            "address": "3380 HENRY CUTOFF ROAD, SODA SPRINGS, ID, 83276"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "Ignite FTX LLC",
+            "reg_number": "0805635053",
+            "current_status": "Active",
+            "branch": null,
+            "address": "28503 HOFFMAN LANE, FULSHEAR, TX, 77441"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX MARKETPLACE, INC.",
+            "reg_number": "6402975",
+            "current_status": "Active",
+            "branch": null,
+            "address": "Kent, DE"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX MANAGER LLC",
+            "reg_number": "6266730",
+            "current_status": "Active",
+            "branch": null,
+            "address": "New Castle, DE"
+        },
+        {
+            "country": "US",
+            "state": "NJ",
+            "company_name": "CHALLENGE FTX, LLC",
+            "reg_number": "0400545103",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX Outfitters LLC",
+            "reg_number": "0805046009",
+            "current_status": "Active",
+            "branch": null,
+            "address": "1113 OAK PARK LN, FRIENDSWOOD, TX, 77546-3659"
+        },
+        {
+            "country": "US",
+            "state": "MI",
+            "company_name": "F.T.X. DRONE LLC",
+            "reg_number": "802629175",
+            "current_status": "Active",
+            "branch": null,
+            "address": "1695 JUNIPER PLACE, HOLT, MI, 48842"
+        },
+        {
+            "country": "US",
+            "state": "WY",
+            "company_name": "FTX INVESTMENTS LLC",
+            "reg_number": "2025-001605133",
+            "current_status": "Active",
+            "branch": null,
+            "address": "5830 E 2ND ST, STE 7000  #21887, CASPER, WY, 82609"
+        },
+        {
+            "country": "US",
+            "state": "SC",
+            "company_name": "FTX Holding, LLC",
+            "reg_number": "1077725",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "MI",
+            "company_name": "FTX TRADING LLC",
+            "reg_number": "803312511",
+            "current_status": "Active",
+            "branch": null,
+            "address": "29660 MIDDLEBELT ROAD, UNIT 2101, FARMINGTON HILLS, MI, 48334"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX Construction LLC",
+            "reg_number": "0804518052",
+            "current_status": "Active",
+            "branch": null,
+            "address": "11970 N HIGHWAY 183, FLORENCE, TX, 76527-4581"
+        },
+        {
+            "country": "US",
+            "state": "NJ",
+            "company_name": "FTX CARE LLC",
+            "reg_number": "0450976630",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX FOUNDATION, INC.",
+            "reg_number": "6586501",
+            "current_status": "Active",
+            "branch": null,
+            "address": "New Castle, DE"
+        },
+        {
+            "country": "US",
+            "state": "AZ",
+            "company_name": "FTX STUDIOS L.L.C.",
+            "reg_number": "L15242149",
+            "current_status": "Active",
+            "branch": null,
+            "address": "911 E CAMELBACK RD UNIT 3085, PHOENIX, Maricopa, AZ, 85014"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX Management, L.L.C.",
+            "reg_number": "0800396601",
+            "current_status": "Active",
+            "branch": null,
+            "address": "864 OLD BOERNE RD, BULVERDE, TX, 78163"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX BIDCO LLC",
+            "reg_number": "7213472",
+            "current_status": "Active",
+            "branch": null,
+            "address": "Sussex, DE"
+        },
+        {
+            "country": "US",
+            "state": "PA",
+            "company_name": "FTX Tactical LLC",
+            "reg_number": "13849297",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX Inflatables LLC",
+            "reg_number": "0803961125",
+            "current_status": "Active",
+            "branch": null,
+            "address": "10601 CLARENCE DR STE 250, FRISCO, TX, 75033-3867"
+        },
+        {
+            "country": "US",
+            "state": "NJ",
+            "company_name": "FTX COMMODITIES LLC",
+            "reg_number": "0400046664",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX Ventures, LLC",
+            "reg_number": "0805542316",
+            "current_status": "Active",
+            "branch": null,
+            "address": "3225 MCLEOD DR STE 100, LAS VEGAS, NV, 89121-2257"
+        },
+        {
+            "country": "US",
+            "state": "CO",
+            "company_name": "FTX CAPITAL GROUP",
+            "reg_number": "20181050817",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "MS",
+            "company_name": "FTX Contracting LLC",
+            "reg_number": "1364871",
+            "current_status": "Active",
+            "branch": null,
+            "address": "301 Babbin wells road, Pearl, MS, 39208"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX Solar, LLC",
+            "reg_number": "0805424947",
+            "current_status": "Active",
+            "branch": null,
+            "address": "200 TYRE LN, FLORENCE, TX, 76527-4960"
+        },
+        {
+            "country": "US",
+            "state": "FL",
+            "company_name": "OAKBERRY FTX LLC",
+            "reg_number": "L22000332548",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "FL",
+            "company_name": "FTX PERFORMANCE LLC",
+            "reg_number": "L23000376201",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "MD",
+            "company_name": "FTX SOLUTIONS, INC",
+            "reg_number": "D21095401",
+            "current_status": "Active",
+            "branch": null,
+            "address": "11720 BELTSVILLE DRIVE SUIT 500, BELTSVILLE, MD, 20705"
+        },
+        {
+            "country": "US",
+            "state": "OR",
+            "company_name": "FTX NETWORKS LLC",
+            "reg_number": "85388594",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "GA",
+            "company_name": "FTX INTERNATIONAL, INC.",
+            "reg_number": "K914973",
+            "current_status": "Active",
+            "branch": null,
+            "address": "1407 CARTER RD, DECATUR, GA, 30030"
+        },
+        {
+            "country": "US",
+            "state": "KY",
+            "company_name": "FTX Solutions, LLC",
+            "reg_number": "0765610",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "IL",
+            "company_name": "FTX FITNESS INC.",
+            "reg_number": "CORP_68030641",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "AZ",
+            "company_name": "FTX Tactical, LLC",
+            "reg_number": "L21310200",
+            "current_status": "Active",
+            "branch": null,
+            "address": "%KEYTLAW LLC 7373 E DOUBLETREE RANCH RD STE 165, SCOTTSDALE, Maricopa, AZ, 85258"
+        },
+        {
+            "country": "US",
+            "state": "UT",
+            "company_name": "FTX Concepts LLC",
+            "reg_number": "14542600-0160",
+            "current_status": "Active",
+            "branch": null,
+            "address": "4130 E. Dakota Dr., Eagle Mountain, UT, 84005"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "The Outpost FTX, LLC",
+            "reg_number": "0804045796",
+            "current_status": "Active",
+            "branch": null,
+            "address": "8705 WYNDHAM VILLAGE DR, JERSEY VILLAGE, TX, 77040-1145"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX Properties, LLC",
+            "reg_number": "0804761317",
+            "current_status": "Active",
+            "branch": null,
+            "address": "440 LOUISIANA ST STE 970, HOUSTON, TX, 77002-1639"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX RECOVERY TRUST",
+            "reg_number": "10055459",
+            "current_status": "Active",
+            "branch": null,
+            "address": "New Castle, DE"
+        },
+        {
+            "country": "US",
+            "state": "CA",
+            "company_name": "FTX LOGISTICS INC",
+            "reg_number": "5467949",
+            "current_status": "Active",
+            "branch": null,
+            "address": "1266 RIVIERA SUMMIT ROAD, SAN DIEGO, CA, 92154"
+        },
+        {
+            "country": "US",
+            "state": "PA",
+            "company_name": "FTX Broadband Corporation",
+            "reg_number": "6530017",
+            "current_status": "Active",
+            "branch": null,
+            "address": "317 Onondaga Avenue, WARREN, PA, 16365"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX Construction, LLC",
+            "reg_number": "0802186366",
+            "current_status": "Active",
+            "branch": null,
+            "address": "6644 COUNTY ROAD 1017, JOSHUA, TX, 76058"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX AVIATION, LLC",
+            "reg_number": "0802541702",
+            "current_status": "Active",
+            "branch": null,
+            "address": "2240 BRESEE DR, CARROLLTON, TX, 75010-4150"
+        },
+        {
+            "country": "US",
+            "state": "NJ",
+            "company_name": "FTX CLOSING LLC",
+            "reg_number": "0600325134",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX INVESTOR LLC",
+            "reg_number": "6266724",
+            "current_status": "Active",
+            "branch": null,
+            "address": "New Castle, DE"
+        },
+        {
+            "country": "US",
+            "state": "MN",
+            "company_name": "ftx trucking LLC",
+            "reg_number": "84a7d8b1-874f-e711-817c-00155d01c4c9",
+            "current_status": "Active",
+            "branch": null,
+            "address": "31952 County Road 11, Houston, MN, 55943-5594"
+        },
+        {
+            "country": "US",
+            "state": "FL",
+            "company_name": "FTX CORPORATE, LLC",
+            "reg_number": "L21000495632",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX BROKERAGE LLC",
+            "reg_number": "0803215358",
+            "current_status": "Active",
+            "branch": null,
+            "address": "440 LOUISIANA ST, HOUSTON, TX, 77002-1639"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX Services L.L.C.",
+            "reg_number": "0805432989",
+            "current_status": "Active",
+            "branch": null,
+            "address": "PO BOX 415, FOWLERTON, TX, 78021-0415"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX Customs LLC",
+            "reg_number": "0805855546",
+            "current_status": "Active",
+            "branch": null,
+            "address": "206 STARLIGHT DR, FORNEY, TX, 75126-4709"
+        },
+        {
+            "country": "US",
+            "state": "GA",
+            "company_name": "FTX Productions LLC",
+            "reg_number": "22169515",
+            "current_status": "Active",
+            "branch": null,
+            "address": "2433 Zablan Ave, Bethlehem, GA, 30620"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX CAPITAL, LLC",
+            "reg_number": "0802564107",
+            "current_status": "Active",
+            "branch": null,
+            "address": "11108 KNOXVILLE LN, FRISCO, TX, 75035"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX CLAIMS SPV LLC",
+            "reg_number": "2545999",
+            "current_status": "Active",
+            "branch": null,
+            "address": "New Castle, DE"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX-DBS HOLDINGS INC.",
+            "reg_number": "5552597",
+            "current_status": "Active",
+            "branch": null,
+            "address": "New Castle, DE"
+        },
+        {
+            "country": "US",
+            "state": "FL",
+            "company_name": "FTX SCHOLARSHIP FUND, CORP.",
+            "reg_number": "N18000005084",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "Tucson FTX Consulting LLC",
+            "reg_number": "0805988915",
+            "current_status": "Active",
+            "branch": null,
+            "address": "5430 FM 359 RD S STE 400 # 1004, BROOKSHIRE, TX, 77423-9916"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX DIGITAL ASSETS LLC",
+            "reg_number": "6946629",
+            "current_status": "Active",
+            "branch": null,
+            "address": "Kent, DE"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX US TRADING, INC.",
+            "reg_number": "6219019",
+            "current_status": "Active",
+            "branch": null,
+            "address": "Kent, DE"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "LIFT RF FTX, LLC",
+            "reg_number": "6710653",
+            "current_status": "Active",
+            "branch": null,
+            "address": "Kent, DE"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX Consulting Services, LLC",
+            "reg_number": "0806145101",
+            "current_status": "Active",
+            "branch": null,
+            "address": "6636 ARGONNE DR APT 2101, FULSHEAR, TX, 77441-2526"
+        },
+        {
+            "country": "US",
+            "state": "NH",
+            "company_name": "FTX Pro Construction Inc",
+            "reg_number": "703245",
+            "current_status": "Active",
+            "branch": null,
+            "address": "8 Frenette Dr, Hudson, Hillsborough, NH, 03051"
+        },
+        {
+            "country": "US",
+            "state": "FL",
+            "company_name": "FTX ENTERPRISE GROUP LLC",
+            "reg_number": "L25000162586",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "ID",
+            "company_name": "FTX Heavy Haul, LLC",
+            "reg_number": "0005790519",
+            "current_status": "Active",
+            "branch": null,
+            "address": "3380 HENRY CUTOFF ROAD, SODA SPRINGS, ID, 83276"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX PHILANTHROPIC ENDEAVORS INC.",
+            "reg_number": "6147169",
+            "current_status": "Active",
+            "branch": null,
+            "address": "New Castle, DE"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX JV INVESTOR LLC",
+            "reg_number": "6266720",
+            "current_status": "Active",
+            "branch": null,
+            "address": "New Castle, DE"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "OROBOROS FTX I, LLC",
+            "reg_number": "7404497",
+            "current_status": "Active",
+            "branch": null,
+            "address": "Sussex, DE"
+        },
+        {
+            "country": "US",
+            "state": "FL",
+            "company_name": "FTX CONSULTING SERVICES INC",
+            "reg_number": "P11000081107",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX Retail Ventures, LLC",
+            "reg_number": "0803098836",
+            "current_status": "Active",
+            "branch": null,
+            "address": "2407 INDIAN TRL, AUSTIN, TX, 78703-2337"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "LIFT RF FTX, INC.",
+            "reg_number": "6638198",
+            "current_status": "Active",
+            "branch": null,
+            "address": "Kent, DE"
+        },
+        {
+            "country": "US",
+            "state": "NY",
+            "company_name": "FTX CAPITAL MARKETS LLC",
+            "reg_number": "4093851",
+            "current_status": "Active",
+            "branch": null,
+            "address": "2000 CENTER STREET, FOURTH FLOOR, BERKELEY, CA, 94704"
+        },
+        {
+            "country": "US",
+            "state": "NY",
+            "company_name": "FTX HOME IMPROVEMENT LLC",
+            "reg_number": "6812041",
+            "current_status": "Active",
+            "branch": null,
+            "address": "228 Park Ave S #672902, New York, NY, 10003"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX Home Solutions, LLC",
+            "reg_number": "0805971543",
+            "current_status": "Active",
+            "branch": null,
+            "address": "520 E ST, FLORESVILLE, TX, 78114-2517"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX Handyman Services, LLC",
+            "reg_number": "0804984202",
+            "current_status": "Active",
+            "branch": null,
+            "address": "6636 ARGONNE DR APT 2101, FULSHEAR, TX, 77441-2526"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX STRATEGIC ADVISORS, LLC",
+            "reg_number": "5860338",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "NY",
+            "company_name": "FTX ACCOUNTING SERVICES LLC",
+            "reg_number": "6451903",
+            "current_status": "Active",
+            "branch": null,
+            "address": "146 Rock Hill Drive, Rock Hill, NY, 12775"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX TRANSIT SOLUTIONS LLC",
+            "reg_number": "0806118602",
+            "current_status": "Active",
+            "branch": null,
+            "address": "5728 CHELMSFORD TRL, ARLINGTON, TX, 76018-2585"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX Hybrid Fitness LLC",
+            "reg_number": "0806222167",
+            "current_status": "Active",
+            "branch": null,
+            "address": "1810 E I30, ROCKWALL, TX, 75087-6201"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX US SERVICES, INC.",
+            "reg_number": "6219026",
+            "current_status": "Active",
+            "branch": null,
+            "address": "Kent, DE"
+        },
+        {
+            "country": "US",
+            "state": "FL",
+            "company_name": "FTX TAX SOLUTIONS, INC",
+            "reg_number": "P10000093249",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX Outdoor Solutions LLC",
+            "reg_number": "0805405685",
+            "current_status": "Active",
+            "branch": null,
+            "address": "28503 HOFFMAN SPRING LN, FULSHEAR, TX, 77441-1663"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "ECAP TLE FTX LLC",
+            "reg_number": "0804671402",
+            "current_status": "Active",
+            "branch": null,
+            "address": "5151 BELT LINE RD STE 1100, DALLAS, TX, 75254-6739"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FRANKLIN FTX I, L.P.",
+            "reg_number": "5521860",
+            "current_status": "Active",
+            "branch": null,
+            "address": "New Castle, DE"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX-LE CAPITAL, LLC",
+            "reg_number": "5943454",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "PA FTX SPV LLC",
+            "reg_number": "6456764",
+            "current_status": "Active",
+            "branch": null,
+            "address": "New Castle, DE"
+        },
+        {
+            "country": "US",
+            "state": "CA",
+            "company_name": "FTX Derivatives US LLC",
+            "reg_number": "202253716279",
+            "current_status": "Active",
+            "branch": null,
+            "address": "16 MADISON SQUARE WEST, 12 FLOOR, NEW YORK, NY, 10010"
+        },
+        {
+            "country": "US",
+            "state": "PA",
+            "company_name": "F.T.X., INC.",
+            "reg_number": "2752875",
+            "current_status": "Active",
+            "branch": "Yes",
+            "address": "CT Corporation System Philadelphia"
+        },
+        {
+            "country": "US",
+            "state": "NY",
+            "company_name": "FTX, INC.",
+            "reg_number": "5350946",
+            "current_status": "Active",
+            "branch": "Yes",
+            "address": "120 MEADOW LN, PO BOX 216, GAYSVILLE, VT, 05746"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX US PIONEER, INC.",
+            "reg_number": "6169482",
+            "current_status": "Active",
+            "branch": null,
+            "address": "New Castle, DE"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "FTX STINGRAY HOLDINGS LLC",
+            "reg_number": "7654850",
+            "current_status": "Active",
+            "branch": null,
+            "address": "New Castle, DE"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "FTX K9 ACADEMY, LLC",
+            "reg_number": "0804398762",
+            "current_status": "Active",
+            "branch": null,
+            "address": "702 JULIABORA CT, FRIENDSWOOD, TX, 77546-3764"
+        },
+        {
+            "country": "US",
+            "state": "TX",
+            "company_name": "GM INVESTMENTS FTX LLC",
+            "reg_number": "0805425138",
+            "current_status": "Active",
+            "branch": null,
+            "address": "4620 E LANCASTER AVE, FORT WORTH, TX, 76103-3213"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "SKYBRIDGE FTX GP LLC",
+            "reg_number": "6743480",
+            "current_status": "Active",
+            "branch": null,
+            "address": "New Castle, DE"
+        },
+        {
+            "country": "US",
+            "state": "DE",
+            "company_name": "LANTERN FTX HOLDINGS LLC",
+            "reg_number": "4574269",
+            "current_status": "Active",
+            "branch": null,
+            "address": "New Castle, DE"
+        },
+        {
+            "country": "US",
+            "state": "NJ",
+            "company_name": "FTX NEW JERSEY, LLC",
+            "reg_number": "0450730886",
+            "current_status": "Active",
+            "branch": null,
+            "address": null
+        }
+    ],
+    "transaction_id": "176286446469132d50ba9cf0QsZY",
+    "request_id": "Test0001Dev"
+}

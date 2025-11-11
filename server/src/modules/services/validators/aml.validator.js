@@ -13,9 +13,10 @@ const amlPersonSchema = Joi.object({
   state: Joi.string().optional(),
   city: Joi.string().optional(),
   zip: Joi.string().optional(),
-  country: Joi.string().length(2).optional(),
+  country_code: Joi.string().length(2).optional(),
   request_id: Joi.string().required(),
   response_type: Joi.string().valid("json", "pdf").optional(),
+  request_type: Joi.string().valid("p", "c").optional(),
   monitoring: Joi.boolean().optional(),
 });
 
@@ -26,9 +27,10 @@ const amlOrganizationSchema = Joi.object({
   state: Joi.string().optional(),
   city: Joi.string().optional(),
   zip: Joi.string().optional(),
-  country: Joi.string().length(2).optional(),
+  country_code: Joi.string().length(2).optional(),
   request_id: Joi.string().required(),
   response_type: Joi.string().valid("json", "pdf").optional(),
+  request_type: Joi.string().valid("p", "c").optional(),
   monitoring: Joi.boolean().optional(),
 });
 

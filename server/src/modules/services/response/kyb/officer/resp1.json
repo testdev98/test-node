@@ -1,0 +1,50 @@
+{
+    "status": true,
+    "status_code": 200,
+    "data": [
+        {
+            "name": "CHRISTOPHER DRAPER",
+            "position": "GENERAL AND OPERATIONS MANAGERS",
+            "officer_id": "",
+            "start_date": "",
+            "end_date": null,
+            "status": null,
+            "address": "35428 COLUMBIA ST",
+            "actd_company": "TINGLER MILLER & GUY",
+            "actd_regnumber": "",
+            "country": "US",
+            "state": "MI",
+            "source": 3
+        },
+        {
+            "name": "CHRISTOPHER DRAPER",
+            "position": "SALES MANAGER",
+            "officer_id": "",
+            "start_date": "2006",
+            "end_date": null,
+            "status": null,
+            "address": "35428 COLUMBIA ST",
+            "actd_company": "CIRCLES",
+            "actd_regnumber": "",
+            "country": "US",
+            "state": "MI",
+            "source": 3
+        },
+        {
+            "name": "CHRISTOPHER DRAPER",
+            "position": "SOCIAL MEDIA MANAGER",
+            "officer_id": "",
+            "start_date": "",
+            "end_date": null,
+            "status": null,
+            "address": "35428 COLUMBIA ST",
+            "actd_company": "FIRST TABERNACLE BAPTIST CHR",
+            "actd_regnumber": "",
+            "country": "US",
+            "state": "MI",
+            "source": 3
+        }
+    ],
+    "transaction_id": "1762865155691330034270cuqdPz",
+    "request_id": "Test0001Dev"
+}
