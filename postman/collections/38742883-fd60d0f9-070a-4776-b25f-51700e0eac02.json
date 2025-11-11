@@ -1595,7 +1595,13 @@
 							},
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{APP_URL}}/services/kyb",
 									"host": [
