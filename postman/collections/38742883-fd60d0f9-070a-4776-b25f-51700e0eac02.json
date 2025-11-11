@@ -1520,7 +1520,7 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": []
 							},
 							"response": []
@@ -1532,19 +1532,19 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": []
 							},
 							"response": []
 						},
 						{
-							"name": "KYB | Copmany Search Copy 2",
+							"name": "KYB | Officer Search",
 							"id": "38742883-c33737f8-1555-4807-89e6-eb22f3959d7c",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": []
 							},
 							"response": []
