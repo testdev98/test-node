@@ -25,6 +25,7 @@ const DashboardLayout = () => {
       href: '/dashboard',
       isActive: location.pathname === '/dashboard',
       gradient: 'from-' + primaryColor + '-600 to-cyan-500',
+      module:"Dashboard",
     },
     {
       title: 'Users',
@@ -32,6 +33,7 @@ const DashboardLayout = () => {
       href: '/users',
       isActive: location.pathname.startsWith('/users'),
       gradient: 'from-' + primaryColor + '-600 to-cyan-500',
+      module:"User",
     },
     {
       title: 'Services',
@@ -39,6 +41,7 @@ const DashboardLayout = () => {
       href: '/services',
       isActive: location.pathname.startsWith('/services'),
       gradient: 'from-' + primaryColor + '-600 to-cyan-500',
+      module: "Services"
     },
     {
       title: 'Roles',
@@ -46,6 +49,7 @@ const DashboardLayout = () => {
       href: '/roles',
       isActive: location.pathname.startsWith('/roles'),
       gradient: 'from-' + primaryColor + '-600 to-cyan-500',
+      module: "Role"
     },
   ];
 

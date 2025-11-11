@@ -19,6 +19,11 @@ const permissionSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    sub_module: {
+      type: String,
+      required: false,
+      trim: true,
+    },
     created_by: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",

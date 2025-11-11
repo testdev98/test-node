@@ -68,25 +68,29 @@
   {
     "name": "Create AML Person Info Request",
     "slug": "create-aml-person-info-request",
-    "module": "AML",
+    "module": "Services",
+    "sub_module": "AML",
     "description": "Grants the ability to create AML person info requests."
   },
   {
     "name": "Create AML Organization Info Request",
     "slug": "create-aml-organization-info-request",
-    "module": "AML",
+    "module": "Services",
+    "sub_module": "AML",
     "description": "Grants the ability to create AML organization info requests."
   },
   {
     "name": "Create Trust Request",
     "slug": "create-trust-request",
-    "module": "Trust",
+    "module": "Services",
+    "sub_module": "Trust",
     "description": "Grants the ability to create trust requests."
   },
   {
     "name": "Create Social Request",
     "slug": "create-social-request",
-    "module": "Social",
+    "module": "Services",
+    "sub_module": "Social",
     "description": "Grants the ability to create social requests."
   }
 ]
