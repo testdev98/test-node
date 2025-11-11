@@ -1408,15 +1408,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{APP_URL}}/services/aml/organization/info",
+									"raw": "{{APP_URL}}/services/aml/",
 									"host": [
 										"{{APP_URL}}"
 									],
 									"path": [
 										"services",
 										"aml",
-										"organization",
-										"info"
+										""
 									]
 								}
 							},
