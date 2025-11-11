@@ -1521,7 +1521,27 @@
 							},
 							"request": {
 								"method": "POST",
-								"header": []
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"envType\": \"sandbox\",\r\n    \"first_name\": \"Donald\",\r\n    \"last_name\": \"Trump\",\r\n    \"request_id\" : \"Test0001Dev\",\r\n    \"country_code\": \"US\",\r\n    \"request_type\": \"p\"\r\n}"
+								},
+								"url": {
+									"raw": "{{APP_URL}}/services/kyb",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"services",
+										"kyb"
+									]
+								}
 							},
 							"response": []
 						},
@@ -1533,7 +1553,17 @@
 							},
 							"request": {
 								"method": "POST",
-								"header": []
+								"header": [],
+								"url": {
+									"raw": "{{APP_URL}}/services/kyb",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"services",
+										"kyb"
+									]
+								}
 							},
 							"response": []
 						},
@@ -1545,7 +1575,17 @@
 							},
 							"request": {
 								"method": "POST",
-								"header": []
+								"header": [],
+								"url": {
+									"raw": "{{APP_URL}}/services/kyb",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"services",
+										"kyb"
+									]
+								}
 							},
 							"response": []
 						}
