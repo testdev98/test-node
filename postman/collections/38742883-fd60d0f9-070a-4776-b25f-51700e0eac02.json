@@ -1514,8 +1514,32 @@
 					"name": "Kyb",
 					"item": [
 						{
-							"name": "New Request",
+							"name": "KYB | Copmany Search",
 							"id": "38742883-d0677fa1-1fc2-42a3-95aa-4f621d31ee3a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "KYB | Copmany Details",
+							"id": "38742883-a0be95c9-7e3a-4141-afa7-4a5b06c2b2a9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "KYB | Copmany Search Copy 2",
+							"id": "38742883-c33737f8-1555-4807-89e6-eb22f3959d7c",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
