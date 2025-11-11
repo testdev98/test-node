@@ -1558,7 +1558,13 @@
 							},
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\r\n    \"envType\": \"sandbox\",\r\n    \"company_name\": \"Oracle\",\r\n    \"request_id\": \"Test0001Dev\",\r\n    \"country_code\": \"US\",\r\n    \"source\": \"1\",\r\n    \"request_type\": \"details\"\r\n}",
