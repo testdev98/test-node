@@ -1511,8 +1511,21 @@
 					"id": "38742883-c5b3812d-2973-421c-8968-07789898fc88"
 				},
 				{
-					"name": "KYB",
-					"item": [],
+					"name": "Kyb",
+					"item": [
+						{
+							"name": "New Request",
+							"id": "38742883-d0677fa1-1fc2-42a3-95aa-4f621d31ee3a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
 					"id": "38742883-4eeca0bc-fc0c-4b92-a9eb-d30361f555fe"
 				}
 			],
