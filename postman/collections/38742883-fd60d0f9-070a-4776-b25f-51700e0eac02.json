@@ -1361,7 +1361,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"envType\": \"sandbox\",\r\n    \"first_name\": \"Donald\",\r\n    \"last_name\": \"Trump\",\r\n    \"request_id\" : \"Test0001Dev\",\r\n    \"country\": \"US\"\r\n}",
+									"raw": "{\r\n    \"envType\": \"sandbox\",\r\n    \"first_name\": \"Donald\",\r\n    \"last_name\": \"Trump\",\r\n    \"request_id\" : \"Test0001Dev\",\r\n    \"country\": \"US\",\r\n    \"request_type\": \"p\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1369,15 +1369,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{APP_URL}}/services/aml/person/info",
+									"raw": "{{APP_URL}}/services/aml",
 									"host": [
 										"{{APP_URL}}"
 									],
 									"path": [
 										"services",
-										"aml",
-										"person",
-										"info"
+										"aml"
 									]
 								}
 							},
