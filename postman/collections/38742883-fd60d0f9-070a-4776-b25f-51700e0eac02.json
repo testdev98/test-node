@@ -1489,7 +1489,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"envType\": \"sandbox\",\r\n    \"email\": \"rinakl.j@azine.in\",\r\n    \"phone\":\"8460823665\",\r\n    \"ip\": \"115.242.213.22\",\r\n    \"request_id\": \"Test0001Dev\"\r\n}",
+									"raw": "{\r\n    \"envType\": \"sandbox\",\r\n    \"email\": \"a.j@azine.in\",\r\n    \"phone\":\"8460823665\",\r\n    \"ip\": \"115.242.213.22\",\r\n    \"request_id\": \"Test0001Dev\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
