@@ -1505,7 +1505,82 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"id": "38742883-1e28bf0c-04e4-4efc-9942-e3a32e275435",
+									"name": "Trust | Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{TOKEN}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"envType\": \"sandbox\",\r\n    \"email\": \"a.j@azine.in\",\r\n    \"phone\":\"8460823665\",\r\n    \"ip\": \"115.242.213.22\",\r\n    \"request_id\": \"Test0001Dev\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{APP_URL}}/services/trust/",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"services",
+												"trust",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "5682"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1632-BkcxHQo3q5qeI95sRRk0FHw6/Jg\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 11 Nov 2025 12:45:20 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"statusCode\": 200,\n    \"status\": true,\n    \"message\": \"Trust request processed successfully.\",\n    \"data\": {\n        \"fraud_score\": 100,\n        \"email_details\": {\n            \"email\": \"john.doe@example.com\",\n            \"score\": 84,\n            \"email_status\": \"deliverable\",\n            \"domain_details\": {\n                \"disposable\": false,\n                \"free\": false,\n                \"domain\": \"example.com\",\n                \"age\": 12346,\n                \"mx_is_valid\": false,\n                \"registrar\": \"\",\n                \"registered_to\": \"Internet Assigned Numbers Authority\",\n                \"website_exists\": true,\n                \"website_exists_taxonomy\": \"TAXONOMY_WEBSITE_EXISTS\",\n                \"internal_links_count\": 0,\n                \"external_links_count\": 1,\n                \"internal_email_links_count\": 0,\n                \"external_email_links_count\": 0,\n                \"internal_images_count\": 0,\n                \"external_images_count\": 0,\n                \"page_size\": 1256,\n                \"tld\": \".com\",\n                \"registered\": true,\n                \"custom\": true\n            },\n            \"account_details\": {\n                \"length\": 8,\n                \"dots_count\": 1,\n                \"numbers_count\": 0,\n                \"letters_count\": 7,\n                \"symbols_count\": 1,\n                \"vowels_count\": 3,\n                \"consonants_count\": 4,\n                \"dots_ratio\": 0.13,\n                \"numbers_ratio\": 0,\n                \"letters_ratio\": 0.88,\n                \"symbols_ratio\": 0.13,\n                \"vowels_ratio\": 0.38,\n                \"consonants_ratio\": 0.5,\n                \"parsed_first_name\": \"john\",\n                \"parsed_last_name\": \"doe\",\n                \"parsed_name_is_valid\": false,\n                \"parsed_name_risk_type\": \"PLACEHOLDER\"\n            },\n            \"breach_details\": {\n                \"count\": 205,\n                \"first_breach\": \"2016-10-21\",\n                \"last_breach\": \"2025-07-10\",\n                \"list\": \"LummaC2 Stealer,2025-07-10|FlowerStorm PhaaS,2025-07-10|LummaC2 Stealer,2025-07-09|LummaC2 Stealer,2025-07-01|LummaC2 Stealer,2025-06-30|Rhadamanthys Stealer,2025-06-30|k1ppers Stealer Log Credential DB,2025-06-26|LummaC2 Stealer,2025-06-26|Brutality Stealer Log DB - Part 3,2025-06-18|Brutality Stealer Log DB - Part 2,2025-06-18\",\n                \"data\": \"[{\\\"id\\\":\\\"82325\\\",\\\"date\\\":\\\"2025-07-10\\\",\\\"title\\\":\\\"LummaC2 Stealer\\\"},{\\\"id\\\":\\\"82093\\\",\\\"date\\\":\\\"2025-07-10\\\",\\\"title\\\":\\\"FlowerStorm PhaaS\\\"},{\\\"id\\\":\\\"82025\\\",\\\"date\\\":\\\"2025-07-09\\\",\\\"title\\\":\\\"LummaC2 Stealer\\\"},{\\\"id\\\":\\\"81425\\\",\\\"date\\\":\\\"2025-07-01\\\",\\\"title\\\":\\\"LummaC2 Stealer\\\"},{\\\"id\\\":\\\"81386\\\",\\\"date\\\":\\\"2025-06-30\\\",\\\"title\\\":\\\"LummaC2 Stealer\\\"},{\\\"id\\\":\\\"81400\\\",\\\"date\\\":\\\"2025-06-30\\\",\\\"title\\\":\\\"Rhadamanthys Stealer\\\"},{\\\"id\\\":\\\"68691\\\",\\\"date\\\":\\\"2025-06-26\\\",\\\"title\\\":\\\"k1ppers Stealer Log Credential DB\\\"},{\\\"id\\\":\\\"81140\\\",\\\"date\\\":\\\"2025-06-26\\\",\\\"title\\\":\\\"LummaC2 Stealer\\\"},{\\\"id\\\":\\\"80243\\\",\\\"date\\\":\\\"2025-06-18\\\",\\\"title\\\":\\\"Brutality Stealer Log DB - Part 3\\\"},{\\\"id\\\":\\\"80242\\\",\\\"date\\\":\\\"2025-06-18\\\",\\\"title\\\":\\\"Brutality Stealer Log DB - Part 2\\\"}]\",\n                \"data_lists\": \"{\\\"names\\\":[{\\\"first_name\\\":\\\"John\\\",\\\"last_name\\\":\\\"Doe\\\",\\\"count\\\":12},{\\\"first_name\\\":\\\"Curt\\\",\\\"last_name\\\":\\\"Author\\\",\\\"count\\\":1},{\\\"first_name\\\":\\\"Ees\\\",\\\"last_name\\\":\\\"Broadcast Video\\\",\\\"count\\\":1},{\\\"first_name\\\":\\\"Starchefs\\\",\\\"last_name\\\":\\\"\\\",\\\"count\\\":1},{\\\"first_name\\\":\\\"Michael\\\",\\\"last_name\\\":\\\"Kurniadi\\\",\\\"count\\\":1},{\\\"first_name\\\":\\\"Johnny\\\",\\\"last_name\\\":\\\"Doe\\\",\\\"count\\\":1},{\\\"first_name\\\":\\\"Daniel\\\",\\\"last_name\\\":\\\"Abadi\\\",\\\"count\\\":1},{\\\"first_name\\\":\\\"Транзакция №\\\",\\\"last_name\\\":\\\"Fsdohwr\\\",\\\"count\\\":1},{\\\"first_name\\\":\\\"\\\",\\\"last_name\\\":\\\"Ü ¼á\\\",\\\"count\\\":1},{\\\"first_name\\\":\\\"Tomas\\\",\\\"last_name\\\":\\\"Ehrlich\\\",\\\"count\\\":1}],\\\"emails\\\":[],\\\"phones\\\":[{\\\"value\\\":\\\"78432674419\\\",\\\"count\\\":2},{\\\"value\\\":\\\"9876543210\\\",\\\"count\\\":1},{\\\"value\\\":\\\"6306296575\\\",\\\"count\\\":1},{\\\"value\\\":\\\"9999999999\\\",\\\"count\\\":1},{\\\"value\\\":\\\"6234146082\\\",\\\"count\\\":1},{\\\"value\\\":\\\"9322532788\\\",\\\"count\\\":1},{\\\"value\\\":\\\"5025550101\\\",\\\"count\\\":1},{\\\"value\\\":\\\"3456787654\\\",\\\"count\\\":1},{\\\"value\\\":\\\"8881342220\\\",\\\"count\\\":1}]}\"\n            },\n            \"to_name\": \"{\\\"first_name\\\":\\\"John\\\",\\\"last_name\\\":\\\"Doe\\\",\\\"confidence\\\":\\\"MEDIUM\\\"}\"\n        },\n        \"phone_details\": {\n            \"number\": \"14155552671\",\n            \"valid\": true,\n            \"type\": \"mobile\",\n            \"country_code\": \"US\",\n            \"score\": 29,\n            \"disposable\": false,\n            \"suspicious_format\": false,\n            \"breach_details\": {\n                \"count\": 5,\n                \"first_breach\": \"2019-09-26\",\n                \"last_breach\": \"2025-02-28\",\n                \"list\": \"Zacks.com,2025-02-28|Sensitive Source,2025-02-19|US Phone DB,2024-12-11|Home Chef,2020-05-14|Facebook Phone Numbers,2019-09-26\",\n                \"data\": \"[{\\\"id\\\":\\\"72546\\\",\\\"date\\\":\\\"2025-02-28\\\",\\\"title\\\":\\\"Zacks.com\\\",\\\"names\\\":[{\\\"first_name\\\":\\\"Ted\\\",\\\"last_name\\\":\\\"Mchu\\\"},{\\\"first_name\\\":\\\"Jonatan\\\",\\\"last_name\\\":\\\"Jonatah\\\"}],\\\"emails\\\":[\\\"ted.mchugh@libertymutual.com\\\",\\\"tumblr@johnderasia.com\\\"]},{\\\"id\\\":\\\"68728\\\",\\\"date\\\":\\\"2025-02-19\\\",\\\"title\\\":\\\"Sensitive Source\\\"},{\\\"id\\\":\\\"40570\\\",\\\"date\\\":\\\"2024-12-11\\\",\\\"title\\\":\\\"US Phone DB\\\",\\\"names\\\":[{\\\"first_name\\\":\\\"Laura\\\",\\\"last_name\\\":\\\"Cole\\\"}],\\\"emails\\\":[\\\"lcole3@rvc.ac.uk\\\"]},{\\\"id\\\":\\\"17650\\\",\\\"date\\\":\\\"2020-05-14\\\",\\\"title\\\":\\\"Home Chef\\\",\\\"names\\\":[{\\\"first_name\\\":\\\"Cat\\\",\\\"last_name\\\":\\\"Hoang Anh\\\"},{\\\"first_name\\\":\\\"Fayyaz\\\",\\\"last_name\\\":\\\"Rehman\\\"},{\\\"first_name\\\":\\\"Jamaicah\\\",\\\"last_name\\\":\\\"Waweru\\\"}],\\\"emails\\\":[\\\"anh.ch@vietinbank.vn\\\",\\\"futurepresident_fayyaz@live.com\\\",\\\"arkplate@gmail.com\\\"]},{\\\"id\\\":\\\"16955\\\",\\\"date\\\":\\\"2019-09-26\\\",\\\"title\\\":\\\"Facebook Phone Numbers\\\"}]\",\n                \"data_lists\": \"{\\\"names\\\":[{\\\"first_name\\\":\\\"Ted\\\",\\\"last_name\\\":\\\"Mchu\\\",\\\"count\\\":1},{\\\"first_name\\\":\\\"Jonatan\\\",\\\"last_name\\\":\\\"Jonatah\\\",\\\"count\\\":1},{\\\"first_name\\\":\\\"Laura\\\",\\\"last_name\\\":\\\"Cole\\\",\\\"count\\\":1},{\\\"first_name\\\":\\\"Cat\\\",\\\"last_name\\\":\\\"Hoang Anh\\\",\\\"count\\\":1},{\\\"first_name\\\":\\\"Fayyaz\\\",\\\"last_name\\\":\\\"Rehman\\\",\\\"count\\\":1},{\\\"first_name\\\":\\\"Jamaicah\\\",\\\"last_name\\\":\\\"Waweru\\\",\\\"count\\\":1}],\\\"emails\\\":[{\\\"value\\\":\\\"ted.mchugh@libertymutual.com\\\",\\\"count\\\":1},{\\\"value\\\":\\\"tumblr@johnderasia.com\\\",\\\"count\\\":1},{\\\"value\\\":\\\"lcole3@rvc.ac.uk\\\",\\\"count\\\":1},{\\\"value\\\":\\\"anh.ch@vietinbank.vn\\\",\\\"count\\\":1},{\\\"value\\\":\\\"futurepresident_fayyaz@live.com\\\",\\\"count\\\":1},{\\\"value\\\":\\\"arkplate@gmail.com\\\",\\\"count\\\":1}],\\\"phones\\\":[]}\"\n            },\n            \"has_aliexpress\": false,\n            \"to_name\": \"{\\\"first_name\\\":\\\"Ted\\\",\\\"last_name\\\":\\\"Mchu\\\",\\\"confidence\\\":\\\"LOW\\\"}\"\n        },\n        \"ip_details\": {\n            \"ip\": \"192.168.1.137\",\n            \"score\": 90,\n            \"connection_type\": \"Reserved\",\n            \"xbl_count\": 0,\n            \"css_count\": 0\n        }\n    }\n}"
+								}
+							]
 						}
 					],
 					"id": "38742883-c5b3812d-2973-421c-8968-07789898fc88"
