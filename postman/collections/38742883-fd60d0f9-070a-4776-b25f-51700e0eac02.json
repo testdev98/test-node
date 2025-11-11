@@ -1602,6 +1602,15 @@
 										"type": "text"
 									}
 								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"envType\": \"sandbox\",\r\n    \"officer_name\": \"Oracle\",\r\n    \"company_number\": 2457805,\r\n    \"state\": \"DE\",\r\n    \"request_id\": \"Test0001Dev\",\r\n    \"country_code\": \"US\",\r\n    \"source\": \"1\",\r\n    \"request_type\": \"details\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "{{APP_URL}}/services/kyb",
 									"host": [
