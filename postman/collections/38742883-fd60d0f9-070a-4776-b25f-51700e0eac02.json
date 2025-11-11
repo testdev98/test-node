@@ -1400,7 +1400,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"envType\": \"sandbox\",\r\n    \"company_name\": \"FTX\",\r\n    \"request_id\": \"Test0001Dev\",\r\n    \"country\": \"US\"\r\n}",
+									"raw": "{\r\n    \"envType\": \"sandbox\",\r\n    \"company_name\": \"FTX\",\r\n    \"request_id\": \"Test0001Dev\",\r\n    \"country\": \"US\",\r\n    \"request_type\": \"p\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
