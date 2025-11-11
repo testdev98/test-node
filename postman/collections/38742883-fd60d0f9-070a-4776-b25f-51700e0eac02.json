@@ -1530,7 +1530,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"envType\": \"sandbox\",\r\n    \"company_name\": \"Oracle\",\r\n    \"request_id\": \"Test0001Dev\",\r\n    \"country_code\": \"US\",\r\n    \"request_type\": \"p\"\r\n}",
+									"raw": "{\r\n    \"envType\": \"sandbox\",\r\n    \"company_name\": \"Oracle\",\r\n    \"request_id\": \"Test0001Dev\",\r\n    \"country_code\": \"US\",\r\n    \"request_type\": \"search\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
