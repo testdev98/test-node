@@ -1239,15 +1239,15 @@
 									}
 								},
 								"url": {
-									"raw": "{{APP_URL}}/admin/user/subscibe-service/6875f163f2f5c9986c984b04",
+									"raw": "{{APP_URL}}/admin/user/6875f163f2f5c9986c984b04/subscibe-service",
 									"host": [
 										"{{APP_URL}}"
 									],
 									"path": [
 										"admin",
 										"user",
-										"subscibe-service",
-										"6875f163f2f5c9986c984b04"
+										"6875f163f2f5c9986c984b04",
+										"subscibe-service"
 									]
 								}
 							},
