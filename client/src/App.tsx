@@ -27,7 +27,7 @@ import UserList from "@/pages/user/UserList";
 import UserForm from "@/pages/user/UserForm";
 import UserView from "@/pages/user/UserView";
 import ServiceList from "@/pages/Service/ServiceList";
-import Request from "@/pages/Service/KYC/Request";
+import Request from "@/pages/Service/KycRequest";
 
 const queryClient = new QueryClient();
 

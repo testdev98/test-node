@@ -15,12 +15,13 @@ const PermissionSeederData = async () => {
 
       if (!existingRecord) {
         await Permission.create(item);
-      } else {
-        await Permission.updateOne(
-          { _id: existingRecord._id },
-          { $set: item } 
-        );
-      }
+      } 
+      // else {
+      //   await Permission.updateOne(
+      //     { _id: existingRecord._id },
+      //     { $set: item } 
+      //   );
+      // }
     }
   } catch (err) {
     console.error("Error processing data:", err);

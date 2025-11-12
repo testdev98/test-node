@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 interface CountryFlagCardProps {
     countryName: string;
     flagUrl: string;
@@ -62,21 +64,7 @@ const CountryFlagCard = ({
                     <p className="text-sm opacity-90 mb-1">{subtitle}</p>
                     <p className="text-xs opacity-80">{description}</p>
                 </div>
-
-                {/* Submit Button */}
-                <button
-                    className={`
-            w-full py-3 px-4 rounded-lg font-semibold text-sm
-            transition-all duration-300
-            ${isDisabled
-                            ? 'bg-gray-500 cursor-not-allowed'
-                            : 'bg-blue-500 hover:bg-blue-600 active:transform active:scale-95'
-                        }
-          `}
-                    disabled={isDisabled}
-                >
-                    Submit
-                </button>
+                <Button isDisabled={isDisabled} onClick={onClick}>Submit</Button>
             </div>
         </div>
     );

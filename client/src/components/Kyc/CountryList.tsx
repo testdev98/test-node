@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CountryFlagCard from "@/components/ui/countryflag-card";
 import PageHeader from "@/components/ui/pageHeader";
 import { Input } from "@/components/ui/input";
+import EnvironmentSwitch from "@/components/common/EnvironmentSwitch";
 
 interface Service {
   _id: string;
@@ -29,14 +30,19 @@ interface CountryListProps {
 
 const CountryList: React.FC<CountryListProps> = ({ service, countries }) => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [isProduction, setIsProduction] = useState(true);
 
   // Filter countries based on search term (by name or code)
-  const filteredCountries = countries.filter(
-    (country) =>
-      country.country_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      country.country_code.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      country.source.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredCountries = countries.filter((country) => {
+    const term = searchTerm.toLowerCase();
+
+    const countryNameMatch = country.country_name.toLowerCase().includes(term);
+    const countryCodeMatch = country.country_code.toLowerCase().includes(term);
+    const sourceMatch = country.source.toLowerCase().includes(term);
+    const combinedMatch = (country.country_code + country.source).toLowerCase().includes(term);
+
+    return countryNameMatch || countryCodeMatch || sourceMatch || combinedMatch;
+  });
 
   return (
     <div className="space-y-6 animate-fade-in">
@@ -45,14 +51,25 @@ const CountryList: React.FC<CountryListProps> = ({ service, countries }) => {
         description="Explore the countries available for KYC verification in this service."
       />
 
-      {/* Search Field */}
-      <div className="max-w-md">
+      <div className="grid grid-cols-12 items-center gap-4">
+        {/* Search Input (left) */}
         <Input
           id="search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Type country name or code..."
+          className="col-span-4"
         />
+
+        <div className="col-span-6" /> {/* Spacer */}
+
+        {/* Environment Switch (right) */}
+        <div className="col-span-2">
+          <EnvironmentSwitch
+            checked={isProduction}
+            onChange={setIsProduction}
+          />
+        </div>
       </div>
 
       {/* Country Cards */}

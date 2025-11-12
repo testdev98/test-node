@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getServices } from "@/api/services";
 import { useToast } from "@/hooks/use-toast";
 import { useUser } from "@/contexts/UserContext";
-import CountryList from "./CountryList";
+import CountryList from "@/components/Kyc/CountryList";
 
 const Request = () => {
   const navigate = useNavigate();
@@ -50,9 +50,8 @@ const Request = () => {
         if (matchedService.status !== 1) {
           toast({
             title: "Error",
-            description: `${matchedService.prefix?.toUpperCase() || ""} ${
-              matchedService.name
-            } service is not active.`,
+            description: `${matchedService.prefix?.toUpperCase() || ""} ${matchedService.name
+              } service is not active.`,
             variant: "destructive",
           });
           return navigate(-1);
@@ -63,7 +62,8 @@ const Request = () => {
             (sub: any) => sub.service_id === matchedService._id
           );
 
-        if (!isSubscribed || user.role_id.name == "super-admin") {
+        // ✅ Allow super-admin to bypass subscription check
+        if (user?.role_id?.slug !== "super-admin" && !isSubscribed) {
           toast({
             title: "Access Denied",
             description: "You are not subscribed to this service.",
@@ -71,7 +71,7 @@ const Request = () => {
           });
           return navigate(-1);
         }
-        console.log("Matched Service:", matchedService.mastersheet);
+
         // Set data if everything is okay
         setService(matchedService);
         setCountries(matchedService.mastersheet || []);

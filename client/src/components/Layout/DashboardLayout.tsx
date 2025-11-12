@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Outlet, useNavigate, Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -25,7 +25,7 @@ const DashboardLayout = () => {
       href: '/dashboard',
       isActive: location.pathname === '/dashboard',
       gradient: 'from-' + primaryColor + '-600 to-cyan-500',
-      module:"Dashboard",
+      module: "Dashboard",
     },
     {
       title: 'Users',
@@ -33,7 +33,7 @@ const DashboardLayout = () => {
       href: '/users',
       isActive: location.pathname.startsWith('/users'),
       gradient: 'from-' + primaryColor + '-600 to-cyan-500',
-      module:"User",
+      module: "User",
     },
     {
       title: 'Services',
@@ -41,7 +41,7 @@ const DashboardLayout = () => {
       href: '/services',
       isActive: location.pathname.startsWith('/services'),
       gradient: 'from-' + primaryColor + '-600 to-cyan-500',
-      module: "Services"
+      module: "Service"
     },
     {
       title: 'Roles',
@@ -59,6 +59,40 @@ const DashboardLayout = () => {
     setUser(null);
     navigate('/');
   };
+
+  // ---------------- PERMISSION CHECK ---------------- //
+  const hasPermission = (module: string): boolean => {
+    // Super admin can access everything
+    if (user?.role_id?.slug === "super-admin") return true;
+
+    return user?.role_id?.permissions?.some((p: any) => p.module === module);
+  };
+
+  // ---------------- AUTO REDIRECT LOGIC ---------------- //
+  useEffect(() => {
+    if (!user) return;
+
+    // ✅ If super-admin, skip redirect logic — allow everything
+    if (user?.role_id?.slug === "super-admin") return;
+
+    // Find all menu items user can access
+    const allowedMenu = menuItems.filter((item) => hasPermission(item.module));
+
+    if (allowedMenu.length === 0) {
+      // No permission at all
+      navigate("/no-access", { replace: true });
+      return;
+    }
+
+    const currentPathAllowed = allowedMenu.some((item) =>
+      location.pathname.startsWith(item.href)
+    );
+
+    if (!currentPathAllowed) {
+      // Redirect to the first accessible menu item
+      navigate(allowedMenu[0].href, { replace: true });
+    }
+  }, [user, location.pathname]);
 
   const colors = [
     { name: 'Blue', value: 'blue', color: '221.2 83.2% 53.3%' },
@@ -108,6 +142,7 @@ const DashboardLayout = () => {
     { name: 'Twilight', class: 'gradient-twilight', gradient: 'from-indigo-500 via-purple-500 to-violet-500' },
   ];
 
+  // ---------------- SIDEBAR COMPONENT ---------------- //
   const Sidebar = ({ mobile = false }) => (
     <div className={`flex flex-col h-full ${mobile ? 'p-4' : ''} bg-gradient-to-b from-card via-card/95 to-card/80 backdrop-blur-xl scrollbar-visible relative overflow-hidden`}>
       {/* Animated background elements */}
@@ -134,7 +169,10 @@ const DashboardLayout = () => {
 
       <nav className="flex-1 p-4 space-y-2 overflow-y-auto scrollbar-visible relative z-10">
         {menuItems.map((item, index) => {
-          const isActive = item.isActive;
+          const isActive = location.pathname.startsWith(item.href);
+          const allowed = hasPermission(item.module);
+          if (!allowed) return null;
+
           return (
             <Link
               key={item.title}
@@ -148,32 +186,33 @@ const DashboardLayout = () => {
                 animationDelay: `${index * 100}ms`,
               }}
             >
-              {/* Animated background for active state */}
               {isActive && (
-                <div className={`absolute inset-0 bg-gradient-to-r ${item.gradient} opacity-90 rounded-xl`} />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-r ${item.gradient} opacity-90 rounded-xl`}
+                />
               )}
-
-              {/* Hover effect background */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${item.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl`} />
-
+              <div
+                className={`absolute inset-0 bg-gradient-to-r ${item.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl`}
+              />
               <div className="relative z-10 flex items-center gap-3">
-                <div className={`p-1 rounded-lg ${isActive ? 'bg-white/20' : 'group-hover:bg-primary/10'} transition-all duration-300`}>
-                  <item.icon className={`h-5 w-5 transition-all duration-300 ${isActive
-                    ? 'scale-110 text-white'
-                    : 'group-hover:scale-105 group-hover:text-primary'
-                    }`} />
+                <div
+                  className={`p-1 rounded-lg ${isActive ? 'bg-white/20' : 'group-hover:bg-primary/10'
+                    } transition-all duration-300`}
+                >
+                  <item.icon
+                    className={`h-5 w-5 transition-all duration-300 ${isActive
+                      ? 'scale-110 text-white'
+                      : 'group-hover:scale-105 group-hover:text-primary'
+                      }`}
+                  />
                 </div>
-                <span className={`font-medium transition-all duration-300 ${isActive ? 'text-white' : ''}`}>
+                <span
+                  className={`font-medium transition-all duration-300 ${isActive ? 'text-white' : ''
+                    }`}
+                >
                   {item.title}
                 </span>
               </div>
-
-              {isActive && (
-                <div className="ml-auto relative z-10">
-                  <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
-                  <div className="absolute inset-0 w-2 h-2 bg-white rounded-full animate-ping" />
-                </div>
-              )}
             </Link>
           );
         })}

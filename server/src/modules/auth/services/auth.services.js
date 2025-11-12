@@ -8,7 +8,7 @@ const LoginService = {
       {
         path: "role_id",
         select: "id name slug",
-        populate: { path: "permissions", select: "id name slug" },
+        populate: { path: "permissions", select: "id name slug module" },
       },
       { path: "parent_id" },
     ]);
@@ -44,7 +44,7 @@ const LoginService = {
       {
         path: "role_id",
         select: "id name slug",
-        populate: { path: "permissions", select: "id name slug" },
+        populate: { path: "permissions", select: "id name slug module" },
       },
       { path: "parent_id" },
     ]);

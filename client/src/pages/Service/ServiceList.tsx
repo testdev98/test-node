@@ -1,13 +1,10 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useUser } from "@/contexts/UserContext";
 import { useToast } from "@/hooks/use-toast";
-import { CanAccess } from "@/guards/AccessControl";
 import { getServices } from "@/api/services";
 import { useNavigate } from "react-router-dom";
 import PageHeader from "@/components/ui/pageHeader";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
 import TextCard from "@/components/ui/text-card";
 import {
   FileText,
@@ -160,22 +157,26 @@ const ServiceList = () => {
             const isSubscribed = isServiceIdSubscribedByUser(service._id);
 
             const isDisabled = service.status !== 1;
-            const hasAccess =
-              isSubscribed || user?.role_id?.slug === "super-admin";
-
+            const hasAccess = isSubscribed || user?.role_id?.slug === "super-admin";
+            let message;
+            if (isDisabled) {
+              message = "Service is not active.";
+            } else if (!hasAccess || !isSubscribed) {
+              message = "Service is not subscribed.";
+            } else {
+              message = service.description || "No description available";
+            }
             return (
               <TextCard
                 key={service._id}
                 title={service.prefix.toUpperCase() + service.name}
                 subtitle={service.slug}
-                description={service.description || "No description available."}
+                description={message}
                 icon={getServiceIcon(service.name)}
                 gradient={gradients[index]}
-                onClick={
-                  hasAccess ? () => handleCardClick(service.slug) : undefined
-                }
+                onClick={hasAccess ? () => handleCardClick(service.slug) : undefined}
                 isSubscribed={isSubscribed}
-                isDisabled={isDisabled}
+                isDisabled={isDisabled || !isSubscribed}
               />
             );
           })}

@@ -1,3 +1,4 @@
 # Ignore node_modules inside the server folder
 server/node_modules/
 client/node_modules/
+admin-theme/node_modules/

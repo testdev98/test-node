@@ -19,6 +19,8 @@ const TextCard = ({
     isSubscribed = false,
     onClick
 }: TextCardProps) => {
+    const primaryColor = localStorage.getItem("primaryColor") || "purple";
+    console.log(primaryColor);
     return (
         <div
             className={`
@@ -39,7 +41,7 @@ const TextCard = ({
             {/* Subscription Badge */}
             {isSubscribed && (
                 <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+                    <div className={`bg-${primaryColor}-600 text-white px-4 py-1 rounded-full text-sm font-medium`}>
                         SUBSCRIBED
                     </div>
                 </div>
