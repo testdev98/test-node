@@ -1215,13 +1215,13 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "User | Subscribe Service Env Update",
 							"id": "38742883-b8138067-658d-420c-b727-d8d4c825d425",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": []
 							},
 							"response": []
