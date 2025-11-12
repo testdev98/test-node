@@ -1213,6 +1213,45 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "User | Subscribe Service Env Update",
+							"id": "38742883-b8138067-658d-420c-b727-d8d4c825d425",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"service_id\": \"6847c687f3168eed8d0c8179\",\r\n    \"environment\": \"sandbox\",\r\n    \"price\": 20,\r\n    \"request_limit\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APP_URL}}/admin/user/6875f163f2f5c9986c984b04/subscibe-service",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"admin",
+										"user",
+										"6875f163f2f5c9986c984b04",
+										"subscibe-service"
+									]
+								}
+							},
+							"response": []
 						}
 					],
 					"id": "38742883-8b8c4658-f76a-40be-b1f2-9e323b3371b0"
