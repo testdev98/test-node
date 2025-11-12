@@ -1222,7 +1222,13 @@
 							},
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\r\n    \"service_id\": \"6847c687f3168eed8d0c8179\",\r\n    \"environment\": \"sandbox\",\r\n    \"price\": 20,\r\n    \"request_limit\": 100\r\n}",
@@ -1233,7 +1239,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{APP_URL}}/admin/user/6875f163f2f5c9986c984b04/subscibe-service/",
+									"raw": "{{APP_URL}}/admin/user/6875f163f2f5c9986c984b04/subscibe-service",
 									"host": [
 										"{{APP_URL}}"
 									],
@@ -1241,8 +1247,7 @@
 										"admin",
 										"user",
 										"6875f163f2f5c9986c984b04",
-										"subscibe-service",
-										""
+										"subscibe-service"
 									]
 								}
 							},
