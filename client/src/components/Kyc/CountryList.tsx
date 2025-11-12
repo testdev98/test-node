@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CountryFlagCard from "@/components/ui/countryflag-card";
 import PageHeader from "@/components/ui/pageHeader";
 import { Input } from "@/components/ui/input";
 import EnvironmentSwitch from "@/components/common/EnvironmentSwitch";
+import { useUser } from "@/contexts/UserContext";
+import { updateSubscribeService } from "@/api/users";
+import { useToast } from "@/hooks/use-toast";
 
 interface Service {
   _id: string;
@@ -29,6 +32,8 @@ interface CountryListProps {
 }
 
 const CountryList: React.FC<CountryListProps> = ({ service, countries }) => {
+  const { user, setUser } = useUser();
+  const { toast } = useToast();
   const [searchTerm, setSearchTerm] = useState("");
   const [isProduction, setIsProduction] = useState(true);
 
@@ -43,6 +48,23 @@ const CountryList: React.FC<CountryListProps> = ({ service, countries }) => {
 
     return countryNameMatch || countryCodeMatch || sourceMatch || combinedMatch;
   });
+
+  const handleEnv = async (checked: boolean) => {
+    setIsProduction(checked);
+    const updatedServices = user.subscribe_services.map((service) => {
+      if (service.service_name === "Kyc") {
+        return { ...service, environment: checked ? "production" : "sandbox" };
+      }
+      return service;
+    });
+    const userUpdateData = { updatedServices };
+    await updateSubscribeService(user.id!, { subscribe_services: updatedServices });
+    toast({
+      title: "KYC Service",
+      description: `KYC service environment change successfully.`,
+    });
+  };
+
 
   return (
     <div className="space-y-6 animate-fade-in">
@@ -67,7 +89,7 @@ const CountryList: React.FC<CountryListProps> = ({ service, countries }) => {
         <div className="col-span-2">
           <EnvironmentSwitch
             checked={isProduction}
-            onChange={setIsProduction}
+            onChange={handleEnv}
           />
         </div>
       </div>

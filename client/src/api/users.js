@@ -33,6 +33,21 @@ export const updateUser = async (id, userData) => {
   }
 };
 
+export const updateSubscribeService = async (id, userData) => {
+  try {
+    const response = await axiosInstance.put(`/admin/user/subscibe-service/${id}`, userData);
+    return response.data;
+  } catch (error) {
+    console.error("Error updating user:", error);
+
+    const errorMessage =
+      error.response?.data?.message ||
+      error.message ||
+      "Failed to update user profile due to an unexpected error.";
+    throw { message: errorMessage, originalError: error };
+  }
+};
+
 export const getUsers = async (params = {}) => {
   try {
     const response = await axiosInstance.get("/admin/user", { params });

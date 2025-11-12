@@ -173,6 +173,50 @@ class UserController {
       });
     }
   }
+
+  async subscribeServicesUpdate(req, res) {
+    try {
+      const { id } = req.params; // userId
+      const { service_id, environment, price, request_limit } = req.body;
+
+      // Build updates object dynamically
+      const updates = {};
+      if (environment !== undefined) updates.environment = environment;
+      if (price !== undefined) updates.price = price;
+      if (request_limit !== undefined) updates.request_limit = request_limit;
+
+      // Call the service function
+      const result = await UserService.updateUserService(
+        id,
+        service_id,
+        updates
+      );
+      // Check if the update actually modified a document
+      if (!result || result.modifiedCount === 0) {
+        return sendResponse(res, {
+          statusCode: StatusCodes.NOT_FOUND,
+          success: false,
+          message: "User or service not found.",
+          data: null,
+        });
+      }
+
+      return sendResponse(res, {
+        statusCode: StatusCodes.OK,
+        success: true,
+        message: "Service updated successfully.",
+        data: result,
+      });
+    } catch (error) {
+      console.error("Error updating service:", error);
+      return sendResponse(res, {
+        statusCode: StatusCodes.INTERNAL_SERVER_ERROR,
+        success: false,
+        message: "An error occurred while updating the service.",
+        error: error.message,
+      });
+    }
+  }
 }
 
 module.exports = new UserController();

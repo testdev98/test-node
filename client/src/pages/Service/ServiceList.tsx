@@ -176,7 +176,7 @@ const ServiceList = () => {
                 gradient={gradients[index]}
                 onClick={hasAccess ? () => handleCardClick(service.slug) : undefined}
                 isSubscribed={isSubscribed}
-                isDisabled={isDisabled || !isSubscribed}
+                isDisabled={isDisabled}
               />
             );
           })}

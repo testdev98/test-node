@@ -5,11 +5,15 @@ const baseSchema = {
   last_name: Joi.string().min(2).max(50),
   email: Joi.string().email().max(100),
   phone: Joi.string().pattern(/^[0-9]{10,15}$/),
-  password: Joi.string().min(6).max(128).allow(null,""),
+  password: Joi.string().min(6).max(128).allow(null, ""),
   status: Joi.boolean().default(true),
-  environment: Joi.string().allow(null, "").default('sandbox'),
+  environment: Joi.string().allow(null, "").default("sandbox"),
   company_profile_name: Joi.string().min(2).max(100).allow(null, "").optional(),
-  company_profile_email: Joi.string().email().max(100).allow(null, "").optional(),
+  company_profile_email: Joi.string()
+    .email()
+    .max(100)
+    .allow(null, "")
+    .optional(),
 
   role_id: Joi.string().hex().length(24).allow(null, "").optional(),
   profile_pic: Joi.any().optional(),
@@ -33,7 +37,20 @@ const createUserSchema = Joi.object({
 
 const updateUserSchema = Joi.object(baseSchema);
 
+const updateSubscribeService = Joi.object({
+  service_id: Joi.string().hex().length(24).required(),
+  environment: Joi.string().valid("sandbox", "production"),
+  price: Joi.number().min(0),
+  request_limit: Joi.number().integer().min(0),
+})
+  .or("environment", "price", "request_limit")
+  .messages({
+    "object.missing":
+      "At least one of environment, price, or request_limit must be provided",
+  });
+
 module.exports = {
   createUserSchema,
   updateUserSchema,
+  updateSubscribeService,
 };

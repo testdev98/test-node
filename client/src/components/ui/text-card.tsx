@@ -20,7 +20,6 @@ const TextCard = ({
     onClick
 }: TextCardProps) => {
     const primaryColor = localStorage.getItem("primaryColor") || "purple";
-    console.log(primaryColor);
     return (
         <div
             className={`
