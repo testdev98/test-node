@@ -1225,7 +1225,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "",
+									"raw": "{\r\n    \"subscribe_services\": [\r\n        {\r\n            \"service_id\": \"6847c687f3168eed8d0c8179\",\r\n            \"service_name\": \"Social\",\r\n            \"environment\": \"sandbox\",\r\n            \"request_limit\": 50,\r\n            \"price\": 10\r\n        },\r\n        {\r\n            \"service_id\": \"6847c687f3168eed8d0c816d\",\r\n            \"service_name\": \"Kyc\",\r\n            \"environment\": \"production\",\r\n            \"request_limit\": 49,\r\n            \"price\": 1\r\n        }\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
