@@ -1223,15 +1223,31 @@
 							"request": {
 								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "{{APP_URL}}/admin/user/subscibe-service",
+									"raw": "{{APP_URL}}/admin/user/subscibe-service/:id",
 									"host": [
 										"{{APP_URL}}"
 									],
 									"path": [
 										"admin",
 										"user",
-										"subscibe-service"
+										"subscibe-service",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
 									]
 								}
 							},
