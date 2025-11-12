@@ -1222,7 +1222,18 @@
 							},
 							"request": {
 								"method": "POST",
-								"header": []
+								"header": [],
+								"url": {
+									"raw": "{{APP_URL}}/admin/user/subscibe-service",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"admin",
+										"user",
+										"subscibe-service"
+									]
+								}
 							},
 							"response": []
 						}
