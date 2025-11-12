@@ -1233,21 +1233,16 @@
 									}
 								},
 								"url": {
-									"raw": "{{APP_URL}}/admin/user/subscibe-service/:id",
+									"raw": "{{APP_URL}}/admin/user/6875f163f2f5c9986c984b04/subscibe-service/",
 									"host": [
 										"{{APP_URL}}"
 									],
 									"path": [
 										"admin",
 										"user",
+										"6875f163f2f5c9986c984b04",
 										"subscibe-service",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": ""
-										}
+										""
 									]
 								}
 							},
