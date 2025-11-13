@@ -7,6 +7,7 @@ import { useUser } from "@/contexts/UserContext";
 import { updateSubscribeService } from "@/api/users";
 import { useToast } from "@/hooks/use-toast";
 
+// Service interface from backend
 interface Service {
   _id: string;
   name: string;
@@ -17,25 +18,38 @@ interface Service {
   description: string;
 }
 
+// Country interface
 interface Country {
   country_name: string;
   country_code: string;
   source: string;
   cs: string;
-  sample_request: string;
-  sample_response: object;
+  sample_request: Record<string, any>;
+  sample_response: Record<string, any>;
 }
 
+// Props for CountryList component
 interface CountryListProps {
   service: Service;
   countries: Country[];
 }
 
+// SelectedService (KYC subscription) interface
+interface SelectedService {
+  service_id: string;
+  service_name: string;
+  environment: "production" | "sandbox";
+  request_limit: number;
+  price: number;
+}
+
+
 const CountryList: React.FC<CountryListProps> = ({ service, countries }) => {
-  const { user, setUser } = useUser();
+  const { user } = useUser();
   const { toast } = useToast();
-  const [searchTerm, setSearchTerm] = useState("");
-  const [isProduction, setIsProduction] = useState(true);
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [isProduction, setIsProduction] = useState<boolean>(true);
+  const [selectedService, setSelectedService] = useState<SelectedService | null>(null);
 
   // Filter countries based on search term (by name or code)
   const filteredCountries = countries.filter((country) => {
@@ -49,21 +63,40 @@ const CountryList: React.FC<CountryListProps> = ({ service, countries }) => {
     return countryNameMatch || countryCodeMatch || sourceMatch || combinedMatch;
   });
 
+  useEffect(() => {
+    if (!user || !user.subscribe_services) return;
+
+    const kycService = user.subscribe_services.find(
+      (service) => service.service_name === "Kyc"
+    );
+
+    if (kycService) {
+      setSelectedService(kycService); // set the selected service
+      setIsProduction(kycService.environment === "production"); // true if production, false if sandbox
+    }
+  }, [user]);
+
   const handleEnv = async (checked: boolean) => {
     setIsProduction(checked);
-    const updatedServices = user.subscribe_services.map((service) => {
-      if (service.service_name === "Kyc") {
-        return { ...service, environment: checked ? "production" : "sandbox" };
+    const environment = checked ? "production" : "sandbox";
+
+    // Build update payload only for KYC
+    const updatedServices = selectedService
+      ? {
+        service_id: selectedService.service_id,
+        environment,
       }
-      return service;
-    });
-    const userUpdateData = { updatedServices };
-    await updateSubscribeService(user.id!, { subscribe_services: updatedServices });
+      : {};
+
+    // Optionally update backend
+    await updateSubscribeService(user.id!, updatedServices);
+
     toast({
       title: "KYC Service",
-      description: `KYC service environment change successfully.`,
+      description: `KYC service environment changed to ${environment} successfully.`,
     });
   };
+
 
 
   return (

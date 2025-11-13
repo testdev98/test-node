@@ -91,8 +91,6 @@ class UserController {
         updated_by: req.user?._id || null,
       };
 
-      console.log(userData);
-
       const updatedUser = await UserService.updateUser(id, userData);
 
       if (!updatedUser) {

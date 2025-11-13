@@ -23,7 +23,7 @@ router.get("/", [authorize("read-user")], userController.getUsers);
 router.get("/:id", [authorize("read-user")], userController.getUserById);
 
 router.put(
-  "/:id/subscibe-service",
+  "/subscibe-service/:id",
   [validate(updateSubscribeService)],
   userController.subscribeServicesUpdate
 );

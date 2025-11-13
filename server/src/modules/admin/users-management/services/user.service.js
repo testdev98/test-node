@@ -1,6 +1,7 @@
 const UserModel = require("../models/user.model");
 const { StatusCodes } = require("http-status-codes");
 const { updateSubscribeService } = require("../validators/user.validator");
+const mongoose = require("mongoose");
 
 const UserService = {
   async createUser(userData) {
@@ -57,35 +58,42 @@ const UserService = {
 
   async updateUserService(userId, serviceId, updates) {
     try {
-      // Build the $set object dynamically
+      // Build $set dynamically
       const setUpdates = {};
       if (updates.environment !== undefined)
-        setUpdates["subscribe_services.$[service].environment"] =
-          updates.environment;
+        setUpdates["subscribe_services.$.environment"] = updates.environment;
       if (updates.price !== undefined)
-        setUpdates["subscribe_services.$[service].price"] = updates.price;
+        setUpdates["subscribe_services.$.price"] = updates.price;
       if (updates.request_limit !== undefined)
-        setUpdates["subscribe_services.$[service].request_limit"] =
+        setUpdates["subscribe_services.$.request_limit"] =
           updates.request_limit;
 
       if (Object.keys(setUpdates).length === 0) {
         return { success: false, message: "No valid fields to update." };
       }
 
-      return await User.findByIdAndUpdate(
-        userId,
-        { $set: setUpdates },
+      // Perform update
+      const updatedUser = await UserModel.findOneAndUpdate(
         {
-          arrayFilters: [
-            { "service.service_id": mongoose.Types.ObjectId(serviceId) },
-          ],
-          new: true, // return updated document
-          runValidators: true,
-        }
+          _id: userId,
+          "subscribe_services.service_id": new mongoose.Types.ObjectId(
+            serviceId
+          ),
+        },
+        { $set: setUpdates },
+        { new: true, runValidators: true }
       );
+
+      if (!updatedUser) {
+        return { success: false, message: "User or service not found." };
+      }
+
+      return updatedUser.subscribe_services;
     } catch (error) {
-      console.error("Error update user: ", error);
-      throw new Error("Error update user subscribe services: " + error.message);
+      console.error("Error updating user service:", error);
+      throw new Error(
+        "Error updating user subscribed service: " + error.message
+      );
     }
   },
 
