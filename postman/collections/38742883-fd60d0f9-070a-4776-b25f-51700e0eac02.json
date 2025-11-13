@@ -1231,7 +1231,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"service_id\": \"6847c687f3168eed8d0c8179\",\r\n    \"environment\": \"sandbox\",\r\n    \"price\": 5,\r\n    \"request_limit\": 100\r\n}   ",
+									"raw": "{\r\n    \"service_id\": \"6847c687f3168eed8d0c8179\",\r\n    \"environment\": \"sandbox\",\r\n    \"price\": 2,\r\n    \"request_limit\": 100\r\n}   ",
 									"options": {
 										"raw": {
 											"language": "json"
