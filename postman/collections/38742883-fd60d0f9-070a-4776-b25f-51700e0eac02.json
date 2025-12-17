@@ -1630,7 +1630,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"envType\": \"sandbox\",\r\n    \"email\": \"a@a.com\",\r\n    \"request_id\": \"Test0001Dev\"\r\n}",
+									"raw": "{\r\n    \"envType\": \"production\",\r\n    \"email\": \"kavya_sharma@yahoo.com\",\r\n    \"request_id\": \"Test0001Dev\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
