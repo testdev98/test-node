@@ -43,13 +43,8 @@ interface SelectedService {
   price: number;
 }
 
-
 const CountryList: React.FC<CountryListProps> = ({ service, countries }) => {
-  const { user } = useUser();
-  const { toast } = useToast();
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [isProduction, setIsProduction] = useState<boolean>(true);
-  const [selectedService, setSelectedService] = useState<SelectedService | null>(null);
 
   // Filter countries based on search term (by name or code)
   const filteredCountries = countries.filter((country) => {
@@ -62,42 +57,6 @@ const CountryList: React.FC<CountryListProps> = ({ service, countries }) => {
 
     return countryNameMatch || countryCodeMatch || sourceMatch || combinedMatch;
   });
-
-  useEffect(() => {
-    if (!user || !user.subscribe_services) return;
-
-    const kycService = user.subscribe_services.find(
-      (service) => service.service_name === "Kyc"
-    );
-
-    if (kycService) {
-      setSelectedService(kycService); // set the selected service
-      setIsProduction(kycService.environment === "production"); // true if production, false if sandbox
-    }
-  }, [user]);
-
-  const handleEnv = async (checked: boolean) => {
-    setIsProduction(checked);
-    const environment = checked ? "production" : "sandbox";
-
-    // Build update payload only for KYC
-    const updatedServices = selectedService
-      ? {
-        service_id: selectedService.service_id,
-        environment,
-      }
-      : {};
-
-    // Optionally update backend
-    await updateSubscribeService(user.id!, updatedServices);
-
-    toast({
-      title: "KYC Service",
-      description: `KYC service environment changed to ${environment} successfully.`,
-    });
-  };
-
-
 
   return (
     <div className="space-y-6 animate-fade-in">
@@ -121,8 +80,7 @@ const CountryList: React.FC<CountryListProps> = ({ service, countries }) => {
         {/* Environment Switch (right) */}
         <div className="col-span-2">
           <EnvironmentSwitch
-            checked={isProduction}
-            onChange={handleEnv}
+            serviceName="Kyc"
           />
         </div>
       </div>

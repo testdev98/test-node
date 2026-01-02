@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getServices } from "@/api/services";
 import { useToast } from "@/hooks/use-toast";
 import { useUser } from "@/contexts/UserContext";
-import CountryList from "@/components/Kyc/CountryList";
+import CountryList from "@/components/Services/Kyc/CountryList";
 
 const Request = () => {
   const navigate = useNavigate();

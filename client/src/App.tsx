@@ -28,6 +28,7 @@ import UserForm from "@/pages/user/UserForm";
 import UserView from "@/pages/user/UserView";
 import ServiceList from "@/pages/Service/ServiceList";
 import Request from "@/pages/Service/KycRequest";
+import Social from "@/pages/Service/SocialRequest";
 
 const queryClient = new QueryClient();
 
@@ -148,6 +149,7 @@ const App = () => (
                 <Route path="services">
                   <Route index element={<ServiceList />} />
                   <Route path="kyc" element={<Request />} />
+                  <Route path="social" element={<Social />} />
                 </Route>
               </Route>
 

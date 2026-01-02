@@ -11,6 +11,7 @@ import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import FormField from "@/components/common/FormFiled";
 
 // Generates a strong, random password for new users.
 const generatePassword = (length: number = 20): string => {
@@ -63,46 +64,6 @@ interface ValidationError {
   message: string;
 }
 
-// Reusable FormField Component
-interface FormFieldProps {
-  id: string;
-  label: string;
-  value: string;
-  onChange: (value: string) => void;
-  type?: string;
-  required?: boolean;
-  placeholder?: string;
-  error?: string;
-  disabled?: boolean;
-}
-
-const FormField: React.FC<FormFieldProps> = ({
-  id,
-  label,
-  value,
-  onChange,
-  type = "text",
-  required,
-  placeholder,
-  error,
-  disabled = false,
-}) => (
-  <div>
-    <Label htmlFor={id} className="text-sm font-medium">
-      {label} {required && <span className="text-red-600">*</span>}
-    </Label>
-    <Input
-      id={id}
-      type={type}
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-      placeholder={placeholder}
-      className="w-full mt-1"
-      disabled={disabled}
-    />
-    {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
-  </div>
-);
 
 const UserForm: React.FC = () => {
   const navigate = useNavigate();
@@ -526,7 +487,7 @@ const UserForm: React.FC = () => {
             <CardTitle>Services</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[400px] overflow-y-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {services.length === 0 ? (
                 <p className="col-span-full text-center text-muted-foreground">No services available.</p>
               ) : (
